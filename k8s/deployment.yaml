@@ -14,12 +14,12 @@ spec:
     spec:
       containers:
       - name: microservicio-java
-        image: openjdk:11-jre-slim
+        image: microservicio-java:latest
         ports:
         - containerPort: 8080
         env:
         - name: SPRING_DATASOURCE_URL
-          value: "jdbc:mysql://mysql:3306/users" # Cambia si usas otra base de datos
+          value: "jdbc:h2:mem:testdb"
 ---
 apiVersion: v1
 kind: Service

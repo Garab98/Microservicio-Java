@@ -1,5 +1,5 @@
-FROM openjdk:11-jre-slim
-ARG JAR_FILE=target/*.jar
-COPY ${JAR_FILE} app.jar
-ENTRYPOINT ["java","-jar","/app.jar"]
+FROM openjdk:17-jdk-alpine
+WORKDIR /app
+COPY target/microservicio-java.jar /app/microservicio-java.jar
+ENTRYPOINT ["java","-jar","/app/microservicio-java.jar"]
 EXPOSE 8080
