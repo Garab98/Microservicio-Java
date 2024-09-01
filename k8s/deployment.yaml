@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: microservicio-java
 spec:
-  replicas: 2
+  replicas: 1
   selector:
     matchLabels:
       app: microservicio-java
@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: microservicio-java
-        image: microservicio-java:latest
+        image: mopito/tfm:java
         ports:
         - containerPort: 8080
         env:
